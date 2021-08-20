@@ -1,0 +1,23 @@
+void setup()
+{
+Serial.begin(9600);
+pinMode(13,OUTPUT);
+}
+void loop()
+{
+int adc;
+adc=analogRead(A0);
+float v;
+v=adc*(5/(1023.0000));
+Serial.print("voltage\t");
+Serial.print(v);
+Serial.println("volts");
+if(v>4.5)
+{
+digitalWrite(13,HIGH);
+}
+else
+{
+digitalWrite(13,LOW);
+}
+}
